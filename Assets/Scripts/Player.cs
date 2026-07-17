@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpSpeed;
     [SerializeField] float groundDamping = 8f;
     [SerializeField] float airDamping = 0.5f;
+
+    [SerializeField] GameObject firePrefab;
+    [SerializeField] float fireSpeed;
+    [SerializeField] Vector3 fireOffset;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,6 +44,16 @@ public class Player : MonoBehaviour
         {
             Vector3 jumpVec = new Vector3(0, jumpSpeed, 0);
             rb.AddForce(jumpVec, ForceMode.VelocityChange);
+        }
+        if (playerInput.actions["Attack"].WasPressedThisFrame())
+        {
+            var position = transform.position + transform.TransformVector(fireOffset);
+            var fireObj = Object.Instantiate(firePrefab, position, transform.rotation);
+            var fireRB = fireObj.GetComponent<Rigidbody>();
+            if (fireRB != null)
+            {
+                fireRB.linearVelocity = transform.forward * fireSpeed;
+            }
         }
     }
     private void FixedUpdate()
