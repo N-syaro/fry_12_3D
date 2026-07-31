@@ -81,5 +81,22 @@ public class Player : MonoBehaviour
                 isGrounded = true;
             }
         }
+
+        var attackObj = collision.gameObject.GetComponent<AttackObject>();
+        if (attackObj != null && invincibleTime <= 0)
+        {
+            hp -= attackObj.power;
+            invincibleTime = invincibleTimeMax;
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
+
+            // ノックバック
+            var dir = transform.position - collision.transform.position;
+            dir.y = 0;
+            var knockbackVec = dir.normalized * knockbackSpeed;
+            rb.AddForce(knockbackVec, ForceMode.VelocityChange);
+        }
     }
 }

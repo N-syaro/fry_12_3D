@@ -4252,11 +4252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb7db2513328cc45bca012e0da461cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerInput: {fileID: 0}
-  lookTarget: {fileID: 0}
+  playerInput: {fileID: 663176237}
+  lookTarget: {fileID: 663176240}
   offset: {x: 0, y: 0, z: 0}
-  targetDistance: 0
-  rotateSpeed: 0
+  targetDistance: 5
+  rotateSpeed: 5
 --- !u!1001 &336885243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9762,7 +9762,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 330585545}
 --- !u!114 &663176239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9776,14 +9776,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   speed: 4
-  accel: 0
+  accel: 1
   groundNormalYMin: 0.7
-  jumpSpeed: 0
+  jumpSpeed: 3
   groundDamping: 8
   airDamping: 0.5
-  firePrefab: {fileID: 0}
-  fireSpeed: 0
+  firePrefab: {fileID: 4818970324401746577, guid: 59c516dceb031b64ba6cb9cd59bb41f0, type: 3}
+  fireSpeed: 3
   fireOffset: {x: 0, y: 0, z: 0}
+--- !u!4 &663176240 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1327674205686831306, guid: 83628a2e699576147adabb30587f44d4, type: 3}
+  m_PrefabInstance: {fileID: 1533009036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &663176241
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663176236}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &663176242
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663176236}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &669033035
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22769,6 +22824,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2350652681907635850, guid: 83628a2e699576147adabb30587f44d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 663176239}
+    - targetCorrespondingSourceObject: {fileID: 2350652681907635850, guid: 83628a2e699576147adabb30587f44d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 663176241}
+    - targetCorrespondingSourceObject: {fileID: 2350652681907635850, guid: 83628a2e699576147adabb30587f44d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 663176242}
   m_SourcePrefab: {fileID: 100100000, guid: 83628a2e699576147adabb30587f44d4, type: 3}
 --- !u!1001 &1543081543
 PrefabInstance:
@@ -23995,14 +24056,14 @@ RectTransform:
   m_GameObject: {fileID: 1634612746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4325, y: 0.40361068, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 234322776}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -720.22, y: 476.18}
+  m_AnchoredPosition: {x: -385.8, y: 191.3}
   m_SizeDelta: {x: 479.5527, y: 127.6393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1634612748
@@ -24018,7 +24079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
